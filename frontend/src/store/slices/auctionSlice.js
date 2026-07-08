@@ -108,7 +108,7 @@ export const getMyAuctionItems = () => async (dispatch) => {
   dispatch(auctionSlice.actions.getMyAuctionsRequest());
   try {
     const response = await axios.get(
-      "http://localhost:5000/api/v1/auctionitem/myitems",
+      "https://api/v1/auctionitem/myitems",
       { withCredentials: true }
     );
     dispatch(auctionSlice.actions.getMyAuctionsSuccess(response.data.items));
@@ -162,7 +162,7 @@ export const republishAuction = (id, data) => async (dispatch) => {
   dispatch(auctionSlice.actions.republishItemRequest());
   try {
     const response = await axios.put(
-      `http://localhost:5000/api/v1/auctionitem/item/republish/${id}`,
+      `http://localhost:5000/api/api/v1/auctionitem/item/republish/${id}`,
       data,
       {
         withCredentials: true,
